@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long int reversebinary(long long int a,long long int b);
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long int a;
+        cin>>a;
+        if(a%2==0)
+        cout<<reversebinary(a,0)<<endl;
+        else
+        cout<<a<<endl;
+    }
+
+    return 0;
+}
+long long int reversebinary(long long int a,long long int b)
+{
+    int rem=a%2;
+    if(a==0)
+    return b;
+    else
+    reversebinary(a/2,(b*2)+rem);
+}
